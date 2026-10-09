@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>HARDCORE GYM • The Strength Sanctuary • Patna</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Premium Modern Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            deep: '#030304',
+            surface: '#0d0d10',
+            surfaceElevated: '#141418',
+            surfaceBorder: 'rgba(255, 255, 255, 0.08)',
+            accent: '#ff3714',
+            accentOrange: '#ff6200',
+            titanium: '#8e8e93',
+            appleGreen: '#30d158'
+          },
+          fontFamily: {
+            grotesk: ['"Space Grotesk"', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Strict layout containment for zero-overflow on all phone screens */
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+    html, body {
+      background-color: #030304;
+      color: #f5f5f7;
+      overflow-x: hidden;
+      width: 100%;
+      scroll-behavior: smooth;
+    }
+
+    /* Apple-style typography gradients */
+    .text-apple-headline {
+      background: linear-gradient(180deg, #FFFFFF 0%, #A1A1A6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .text-iron-glow {
+      background: linear-gradient(135deg, #ff451a 0%, #ff782e 60%, #ffffff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Luxury Glassmorphism */
+    .apple-glass {
+      background: rgba(14, 14, 18, 0.72);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+    }
+    .apple-glass-pill {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Ambient Subtle Grid */
+    .bg-pro-mesh {
+      background-image: radial-gradient(rgba(255, 55, 20, 0.07) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+
+    /* Scroll reveal transitions */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .scroll-reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="font-sans antialiased bg-deep selection:bg-accent selection:text-white">
+
+  <script>
+    class AppleAcousticEngine {
+      constructor() {
+        this.ctx = null;
+        this.muted = false;
+        this.lastScrollTime = 0;
+      }
+      
+      init() {
+        if (!this.ctx) {
+          const AudioContext = window.AudioContext || window.webkitAudioContext;
+          if (AudioContext) this.ctx = new AudioContext();
+        }
+        if (this.ctx && this.ctx.state === 'suspended') {
+          this.ctx.resume();
+        }
+      }
+
+      // Cinematic Keynote Deep Sub-Bass
+      playCinematicIntroDrop() {
+        if (this.muted) return;
+        this.init();
+        if (!this.ctx) return;
+        const t = this.ctx.currentTime;
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(120, t);
+        osc.frequency.exponentialRampToValueAtTime(32, t + 1.8);
+
+        gain.gain.setValueAtTime(0.75, t);
+        gain.gain.exponentialRampToValueAtTime(0.001, t + 2.0);
+
+        osc.connect(gain);
+        gain.connect(this.ctx.destination);
+        osc.start(t);
+        osc.stop(t + 2.0);
+      }
+
+      // High-End Olympic Plate Metal Resonance
+      playMetallicRing() {
+        if (this.muted) return;
+        this.init();
+        if (!this.ctx) return;
+        const t = this.ctx.currentTime;
+
+        // Pristine Bell/Plate Ring
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(1046.5, t); // High C
+        osc.frequency.exponentialRampToValueAtTime(523.25, t + 0.8);
+        gain.gain.setValueAtTime(0.35, t);
+        gain.gain.exponentialRampToValueAtTime(0.001, t + 0.9);
+
+        // Low Anvil Thud
+        const thud = this.ctx.createOscillator();
+        const thudGain = this.ctx.createGain();
+        thud.type = 'triangle';
+        thud.frequency.setValueAtTime(180, t);
+        thud.frequency.exponentialRampToValueAtTime(45, t + 0.3);
+        thudGain.gain.setValueAtTime(0.6, t);
+        thudGain.gain.exponentialRampToValueAtTime(0.001, t + 0.4);
+
+        osc.connect(gain);
+        gain.connect(this.ctx.destination);
+        thud.connect(thudGain);
+        thudGain.connect(this.ctx.destination);
+
+        osc.start(t);
+        thud.start(t);
+        osc.stop(t + 0.9);
+        thud.stop(t + 0.4);
+      }
+
+      // Elegant Haptic Tap (Apple Taptic feel)
+      playTap() {
+        if (this.muted) return;
+        this.init();
+        if (!this.ctx) return;
+        const t = this.ctx.currentTime;
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(260, t);
+        osc.frequency.exponentialRampToValueAtTime(80, t + 0.04);
+        gain.gain.setValueAtTime(0.2, t);
+        gain.gain.exponentialRampToValueAtTime(0.001, t + 0.04);
+        osc.connect(gain);
+        gain.connect(this.ctx.destination);
+        osc.start(t);
+        osc.stop(t + 0.04);
+      }
+
+      // Subtle dynamic scrolling tick
+      playScrollTick() {
+        const now = Date.now();
+        if (now - this.lastScrollTime < 180) return;
+        this.lastScrollTime = now;
+        if (this.muted || !this.ctx) return;
+        const t = this.ctx.currentTime;
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(420, t);
+        osc.frequency.exponentialRampToValueAtTime(180, t + 0.03);
+        gain.gain.setValueAtTime(0.04, t);
+        gain.gain.exponentialRampToValueAtTime(0.001, t + 0.03);
+        osc.connect(gain);
+        gain.connect(this.ctx.destination);
+        osc.start(t);
+        osc.stop(t + 0.03);
+      }
+
+      toggleAudio() {
+        this.muted = !this.muted;
+        const btn = document.getElementById('global-sound-toggle');
+        if (btn) {
+          btn.innerHTML = this.muted ? '<i class="fa-solid fa-volume-xmark"></i>' : '<i class="fa-solid fa-volume-high"></i>';
+        }
+      }
+    }
+
+    const sound = new AppleAcousticEngine();
+
+    // Trigger audio context quietly on first user touch anywhere
+    window.addEventListener('touchstart', () => sound.init(), { once: true });
+    window.addEventListener('click', () => sound.init(), { once: true });
+    window.addEventListener('scroll', () => sound.playScrollTick(), { passive: true });
+  </script>
+
+  <div id="intro-stage" class="fixed inset-0 z-50 bg-deep flex flex-col items-center justify-center p-6 transition-all duration-1000 ease-out">
+    <canvas id="intro-canvas" class="absolute inset-0 w-full h-full pointer-events-none"></canvas>
+    
+    <!-- Central Cinematic Sequence -->
+    <div class="relative z-10 flex flex-col items-center text-center">
+      
+      <!-- Precision SVG Barbell Emblem Container -->
+      <div id="logo-emblem-box" class="w-24 h-24 sm:w-28 sm:h-28 rounded-3xl apple-glass p-0.5 relative flex items-center justify-center shadow-[0_0_80px_rgba(255,55,20,0.35)] transition-all duration-700 scale-90 opacity-0">
+        <div class="w-full h-full rounded-[22px] bg-surface flex items-center justify-center relative overflow-hidden">
+          <svg class="w-14 h-14 text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.6)]" viewBox="0 0 64 64" fill="none">
+            <!-- Central Bar -->
+            <rect x="29" y="8" width="6" height="48" rx="3" fill="#ffffff"/>
+            <!-- Knurling texture lines -->
+            <line x1="29" y1="26" x2="35" y2="26" stroke="#2c2c2e" stroke-width="1.5"/>
+            <line x1="29" y1="32" x2="35" y2="32" stroke="#2c2c2e" stroke-width="1.5"/>
+            <line x1="29" y1="38" x2="35" y2="38" stroke="#2c2c2e" stroke-width="1.5"/>
+            <!-- Top Plates with Orange Accent Rim -->
+            <rect x="16" y="11" width="32" height="7" rx="2.5" fill="#ff451a"/>
+            <rect x="20" y="5" width="24" height="6" rx="2" fill="#d1d1d6"/>
+            <!-- Bottom Plates -->
+            <rect x="16" y="46" width="32" height="7" rx="2.5" fill="#ff451a"/>
+            <rect x="20" y="53" width="24" height="6" rx="2" fill="#d1d1d6"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Typography Reveal -->
+      <div id="intro-text-box" class="mt-6 space-y-2 opacity-0 transform translate-y-4 transition-all duration-700">
+        <h1 class="font-grotesk text-2xl sm:text-3xl font-extrabold tracking-wider text-white">HARDCORE GYM</h1>
+        <p class="text-[10px] tracking-[0.35em] text-titanium uppercase font-medium">PATLIPUTRA COLONY • PATNA</p>
+      </div>
+
+      <!-- Minimalist Progress Meter -->
+      <div id="intro-meter" class="mt-8 w-36 h-[2px] bg-white/10 rounded-full overflow-hidden transition-opacity duration-500">
+        <div id="intro-meter-bar" class="w-0 h-full bg-gradient-to-r from-accent to-accentOrange transition-all duration-300"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Intro Magnetic Particle Physics
+    const introCanvas = document.getElementById('intro-canvas');
+    const introCtx = introCanvas.getContext('2d');
+    let cW, cH;
+    let particlesList = [];
+    let isForged = false;
+
+    function resizeIntro() {
+      cW = introCanvas.width = window.innerWidth;
+      cH = introCanvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeIntro);
+    resizeIntro();
+
+    class RingParticle {
+      constructor() {
+        this.angle = Math.random() * Math.PI * 2;
+        this.radius = Math.random() * (Math.min(cW, cH) * 0.42) + 30;
+        this.speed = (0.015 + Math.random() * 0.02) * (Math.random() > 0.5 ? 1 : -1);
+        this.size = Math.random() * 2.2 + 0.7;
+        this.alpha = Math.random() * 0.7 + 0.3;
+        this.color = Math.random() > 0.4 ? '#ff3714' : (Math.random() > 0.5 ? '#ffffff' : '#ffa07a');
+      }
+      update() {
+        if (!isForged) {
+          this.angle += this.speed;
+        } else {
+          this.radius *= 0.93; // Snap inward magnetically
+          this.angle += this.speed * 3.5;
+        }
+        this.x = cW / 2 + Math.cos(this.angle) * this.radius;
+        this.y = cH / 2 + Math.sin(this.angle) * this.radius;
+      }
+      draw() {
+        introCtx.save();
+        introCtx.globalAlpha = this.alpha;
+        introCtx.fillStyle = this.color;
+        introCtx.beginPath();
+        introCtx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        introCtx.fill();
+        introCtx.restore();
+      }
+    }
+
+    const particleTotal = window.innerWidth < 640 ? 180 : 320;
+    for (let i = 0; i < particleTotal; i++) {
+      particlesList.push(new RingParticle());
+    }
+
+    let introLoopId;
+    function loopIntro() {
+      introCtx.clearRect(0, 0, cW, cH);
+      particlesList.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      introLoopId = requestAnimationFrame(loopIntro);
+    }
+    loopIntro();
+
+    // Auto-launch sequence with zero button clutter
+    window.addEventListener('DOMContentLoaded', () => {
+      const bar = document.getElementById('intro-meter-bar');
+      bar.style.transition = 'width 1.1s cubic-bezier(0.65, 0, 0.35, 1)';
+      setTimeout(() => { bar.style.width = '100%'; }, 50);
+
+      setTimeout(() => {
+        // Magnetize particles
+        isForged = true;
+        sound.playCinematicIntroDrop();
+
+        setTimeout(() => {
+          // Reveal forged emblem with metallic chime
+          sound.playMetallicRing();
+
+          const emblem = document.getElementById('logo-emblem-box');
+          const textBox = document.getElementById('intro-text-box');
+          const meter = document.getElementById('intro-meter');
+
+          meter.style.opacity = '0';
+          emblem.style.opacity = '1';
+          emblem.style.transform = 'scale(1)';
+          textBox.style.opacity = '1';
+          textBox.style.transform = 'translateY(0)';
+
+          // Smooth dissolve into the flagship website
+          setTimeout(() => {
+            const stage = document.getElementById('intro-stage');
+            stage.style.opacity = '0';
+            stage.style.pointerEvents = 'none';
+
+            setTimeout(() => {
+              stage.remove();
+              cancelAnimationFrame(introLoopId);
+            }, 900);
+          }, 1100);
+
+        }, 750);
+      }, 1000);
+    });
+  </script>
+
+  <header class="sticky top-0 z-40 w-full apple-glass border-b border-white/[0.06] transition-all">
+    <div class="max-w-xl mx-auto px-4 h-16 flex items-center justify-between">
+      
+      <!-- Brand Minimal Identity -->
+      <a href="#" onclick="sound.playTap()" class="flex items-center gap-2.5">
+        <div class="w-8 h-8 rounded-xl bg-surfaceElevated border border-white/10 flex items-center justify-center text-accent text-sm shadow-inner">
+          <i class="fa-solid fa-dumbbell"></i>
+        </div>
+        <div>
+          <div class="font-grotesk font-bold text-sm tracking-wider text-white leading-none">HARDCORE GYM</div>
+          <div class="text-[9px] text-titanium font-medium tracking-widest uppercase mt-0.5">Patliputra • Patna</div>
+        </div>
+      </a>
+
+      <!-- Quick Controls -->
+      <div class="flex items-center gap-2">
+        <!-- Audio Mute/Unmute -->
+        <button id="global-sound-toggle" onclick="sound.toggleAudio()" class="w-8 h-8 rounded-full apple-glass-pill flex items-center justify-center text-xs text-zinc-300 active:scale-90 transition-transform" title="Toggle Sound">
+          <i class="fa-solid fa-volume-high"></i>
+        </button>
+
+        <!-- Direct Fast Pass Pill -->
+        <a href="#trial" onclick="sound.playTap()" class="px-3.5 py-1.5 rounded-full bg-accent hover:bg-accentOrange text-white text-xs font-semibold tracking-wider uppercase active:scale-95 transition-all shadow-[0_2px_12px_rgba(255,55,20,0.3)]">
+          Free Pass
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="max-w-md sm:max-w-xl mx-auto px-4 pt-6 pb-36 space-y-20 bg-pro-mesh">
+
+    <!-- HERO SECTION -->
+    <section class="space-y-6 pt-2">
+      
+      <!-- Top Badges Row -->
+      <div class="flex flex-wrap items-center gap-2">
+        <!-- Google Verified 4.2 Rating -->
+        <a href="https://maps.app.goo.gl/JGv3qWhDcefRj4jx6" target="_blank" onclick="sound.playTap()" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full apple-glass-pill text-[11px] text-zinc-300 hover:border-white/20">
+          <i class="fa-solid fa-star text-amber-400 text-[10px]"></i>
+          <span class="font-bold text-white">4.2</span>
+          <span class="text-zinc-500">•</span>
+          <span>235+ Verified Google Reviews</span>
+          <i class="fa-solid fa-arrow-up-right-from-square text-[9px] text-zinc-500 ml-1"></i>
+        </a>
+
+        <!-- Live Working Hours Status -->
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full apple-glass-pill text-[11px] text-appleGreen font-medium">
+          <span class="w-1.5 h-1.5 rounded-full bg-appleGreen animate-pulse"></span>
+          <span>Open Now • Closes 8:30 PM</span>
+        </div>
+      </div>
+
+      <!-- Main Apple-Style Typography -->
+      <div class="space-y-2">
+        <div class="text-[11px] uppercase tracking-[0.3em] font-bold text-accent">Uncompromising Iron Culture</div>
+        <h2 class="font-grotesk text-4xl sm:text-5xl font-extrabold tracking-tight text-white leading-[1.08]">
+          RAW POWER.<br>
+          <span class="text-apple-headline">ZERO GIMMICKS.</span>
+        </h2>
+      </div>
+
+      <!-- Verified Bio from Maps Owner Profile -->
+      <p class="text-zinc-400 text-sm leading-relaxed font-normal">
+        <span class="text-zinc-200 font-medium">“Pure hardcore environment where only desired results are achieved, no fancy show-off.”</span>
+        Patna’s dedicated temple for bodybuilding, heavy lifting, and radical body recomposition.
+      </p>
+
+      <!-- Primary Action Buttons (Thumb Friendly) -->
+      <div class="grid grid-cols-2 gap-3 pt-1">
+        <a href="#trial" onclick="sound.playTap()" class="py-3.5 px-4 rounded-2xl bg-gradient-to-r from-accent to-accentOrange text-white text-center font-bold text-xs tracking-wider uppercase active:scale-95 transition-transform flex items-center justify-center gap-2 shadow-[0_8px_25px_rgba(255,55,20,0.3)]">
+          <i class="fa-solid fa-bolt text-xs"></i>
+          <span>Claim 1-Day Pass</span>
+        </a>
+
+        <a href="https://maps.app.goo.gl/JGv3qWhDcefRj4jx6" target="_blank" onclick="sound.playTap()" class="py-3.5 px-4 rounded-2xl apple-glass text-white text-center font-bold text-xs tracking-wider uppercase hover:border-white/20 active:scale-95 transition-transform flex items-center justify-center gap-2">
+          <i class="fa-solid fa-location-arrow text-accent text-xs"></i>
+          <span>Get Directions</span>
+        </a>
+      </div>
+
+      <!-- Apple Spec Numbers Ribbon -->
+      <div class="grid grid-cols-3 gap-2 pt-3 border-t border-white/[0.06]">
+        <div class="p-3.5 rounded-2xl apple-glass text-center">
+          <span class="text-[9px] text-titanium uppercase font-bold tracking-widest block">Campuses</span>
+          <span class="font-grotesk text-lg text-white font-extrabold">2 IN PATNA</span>
+        </div>
+        <div class="p-3.5 rounded-2xl apple-glass text-center">
+          <span class="text-[9px] text-titanium uppercase font-bold tracking-widest block">Iron Stacks</span>
+          <span class="font-grotesk text-lg text-accent font-extrabold">60 KG+</span>
+        </div>
+        <div class="p-3.5 rounded-2xl apple-glass text-center">
+          <span class="text-[9px] text-titanium uppercase font-bold tracking-widest block">Peak Energy</span>
+          <span class="font-grotesk text-lg text-white font-extrabold">100% RAW</span>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="space-y-4 scroll-reveal">
+      <div class="flex items-center justify-between">
+        <div>
+          <div class="text-[10px] uppercase tracking-[0.25em] text-accent font-bold">Engineered For Gains</div>
+          <h3 class="font-grotesk text-2xl font-bold text-white">THE IRON MATRIX</h3>
+        </div>
+        <span class="text-xs text-titanium">04 Specs</span>
+      </div>
+
+      <div class="space-y-3">
+        
+        <!-- Spec Card 1 -->
+        <div class="p-5 rounded-3xl apple-glass border border-white/5 space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="text-[10px] tracking-widest uppercase font-bold text-accent">01 • Free Weights</span>
+            <i class="fa-solid fa-dumbbell text-zinc-500 text-sm"></i>
+          </div>
+          <h4 class="font-bold text-base text-white">Calibrated Olympic Platforms & Racks</h4>
+          <p class="text-xs text-zinc-400 leading-relaxed">
+            Multi-station power cages, heavy Olympic chrome barbells, rubber-coated iron plates, and hex dumbbells exceeding 60 KG with zero queues.
+          </p>
+        </div>
+
+        <!-- Spec Card 2 -->
+        <div class="p-5 rounded-3xl apple-glass border border-white/5 space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="text-[10px] tracking-widest uppercase font-bold text-accent">02 • Hypertrophy</span>
+            <i class="fa-solid fa-network-wired text-zinc-500 text-sm"></i>
+          </div>
+          <h4 class="font-bold text-base text-white">Continuous-Tension Cable Mechanics</h4>
+          <p class="text-xs text-zinc-400 leading-relaxed">
+            Smooth dual-adjustable pulleys, seated cable rows, wide lat pulldowns, and pec decks calibrated for maximum mechanical tension on muscle fibers.
+          </p>
+        </div>
+
+        <!-- Spec Card 3 -->
+        <div class="p-5 rounded-3xl apple-glass border border-white/5 space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="text-[10px] tracking-widest uppercase font-bold text-accent">03 • Conditioning</span>
+            <i class="fa-solid fa-person-running text-zinc-500 text-sm"></i>
+          </div>
+          <h4 class="font-bold text-base text-white">Cardiovascular & Fat Shred Bay</h4>
+          <p class="text-xs text-zinc-400 leading-relaxed">
+            High-incline commercial treadmills, magnetic upright cycles, and cross-trainers optimized for stamina building and rapid calorie expenditure.
+          </p>
+        </div>
+
+        <!-- Spec Card 4 -->
+        <div class="p-5 rounded-3xl apple-glass border border-white/5 space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="text-[10px] tracking-widest uppercase font-bold text-accent">04 • Biomechanics</span>
+            <i class="fa-solid fa-shield-halved text-zinc-500 text-sm"></i>
+          </div>
+          <h4 class="font-bold text-base text-white">Direct Technique & Indian Nutrition</h4>
+          <p class="text-xs text-zinc-400 leading-relaxed">
+            Real form corrections from passionate coaches. Personalized advice on vegetarian & non-vegetarian high-protein diets tailored for Bihar lifters.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="space-y-4 scroll-reveal">
+      <div>
+        <div class="text-[10px] uppercase tracking-[0.25em] text-accent font-bold">Dynamic Training Protocols</div>
+        <h3 class="font-grotesk text-2xl font-bold text-white">SELECT YOUR GOAL</h3>
+      </div>
+
+      <!-- Segmented Tab Switcher -->
+      <div class="grid grid-cols-4 p-1 rounded-2xl bg-surfaceElevated border border-white/10 text-center text-xs font-semibold">
+        <button onclick="switchSplit('chest')" id="tab-chest" class="py-2.5 rounded-xl bg-accent text-white transition-all">PUSH</button>
+        <button onclick="switchSplit('back')" id="tab-back" class="py-2.5 rounded-xl text-zinc-400 hover:text-white transition-all">PULL</button>
+        <button onclick="switchSplit('legs')" id="tab-legs" class="py-2.5 rounded-xl text-zinc-400 hover:text-white transition-all">LEGS</button>
+        <button onclick="switchSplit('fat')" id="tab-fat" class="py-2.5 rounded-xl text-zinc-400 hover:text-white transition-all">SHRED</button>
+      </div>
+
+      <!-- Interactive Tab Output Display -->
+      <div id="split-display-card" class="p-6 rounded-3xl apple-glass border border-white/10 space-y-3 transition-all duration-300">
+        <div class="flex items-center justify-between">
+          <span id="split-tag" class="text-[10px] font-bold tracking-widest uppercase text-accent">UPPER BODY PROTOCOL</span>
+          <span id="split-load" class="text-xs text-zinc-400 font-mono">INTENSITY: 95%</span>
+        </div>
+        <h4 id="split-title" class="font-grotesk text-xl font-bold text-white">Chest, Shoulders & Triceps Density</h4>
+        <p id="split-desc" class="text-xs text-zinc-400 leading-relaxed">
+          Flat & Incline Bench Presses, Dumbbell Flys, Overhead Barbell Presses, Cable Lateral Raises, and Skull Crushers engineered for upper torso armor.
+        </p>
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between text-[11px] text-zinc-300">
+          <span>Target: Chest Thickening</span>
+          <span class="text-accent font-semibold">Session: 60 Mins</span>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const splitData = {
+        chest: {
+          tag: 'UPPER BODY PROTOCOL',
+          load: 'INTENSITY: 95%',
+          title: 'Chest, Deltoids & Triceps Overload',
+          desc: 'Heavy Flat/Incline Barbell Presses, Deep Dumbbell Presses, Standing Overhead Military Presses, and Cable Tricep extensions for dense upper armor.',
+          focus: 'Target: Upper Body Armor',
+          time: 'Session: 60 Mins'
+        },
+        back: {
+          tag: 'POSTERIOR CHAIN PROTOCOL',
+          load: 'INTENSITY: 90%',
+          title: 'V-Taper Back, Lats & Biceps Peak',
+          desc: 'Deadlifts, T-Bar Rows, Wide Lat Pulldowns, Heavy Dumbbell Rows, followed by Incline Hammer Curls for width, thickness, and spinal strength.',
+          focus: 'Target: 3D V-Taper Lats',
+          time: 'Session: 65 Mins'
+        },
+        legs: {
+          tag: 'LOWER BODY FOUNDATION',
+          load: 'INTENSITY: 100%',
+          title: 'Squats, Hamstrings & Quad Explosiveness',
+          desc: 'Deep Olympic Back Squats, Leg Presses, Romanian Deadlifts, Hamstring Curls, and Standing Calf Raises. Pure mental toughness.',
+          focus: 'Target: High Natural Testosterone',
+          time: 'Session: 70 Mins'
+        },
+        fat: {
+          tag: 'METABOLIC ACCELERATOR',
+          load: 'INTENSITY: 85%',
+          title: 'High-Velocity Fat Shred & Core',
+          desc: 'Incline Interval Sprints, Kettlebell Swings, Cable Woodchops, Hanging Leg Raises, and Cycle sprints to reveal sculpted abdominals.',
+          focus: 'Target: Rapid Caloric Deficit',
+          time: 'Session: 45 Mins'
+        }
+      };
+
+      function switchSplit(type) {
+        sound.playTap();
+        ['chest', 'back', 'legs', 'fat'].forEach(k => {
+          const btn = document.getElementById(`tab-${k}`);
+          if (k === type) {
+            btn.className = 'py-2.5 rounded-xl bg-accent text-white transition-all';
+          } else {
+            btn.className = 'py-2.5 rounded-xl text-zinc-400 hover:text-white transition-all';
+          }
+        });
+
+        const d = splitData[type];
+        document.getElementById('split-tag').innerText = d.tag;
+        document.getElementById('split-load').innerText = d.load;
+        document.getElementById('split-title').innerText = d.title;
+        document.getElementById('split-desc').innerText = d.desc;
+      }
+    </script>
+
+    <section class="space-y-4 scroll-reveal">
+      <div class="text-[10px] uppercase tracking-[0.25em] text-accent font-bold">The Hardcore Manifesto</div>
+      
+      <div class="p-6 rounded-3xl apple-glass border border-white/10 relative overflow-hidden space-y-4">
+        <div class="text-zinc-600 text-5xl font-grotesk leading-none select-none">“</div>
+        <p class="text-zinc-200 text-base leading-relaxed font-normal italic">
+          “हम कोई फैंसी कैफ़े नहीं हैं जहाँ लोग केवल फोटो खिंचाने आते हैं। हार्डकोर जिम उन लोगों के लिए बना है जो असली मेहनत और कड़े अनुशासन में विश्वास रखते हैं। जब आप यहाँ आते हैं, आपका हर एक रेप्स आपकी ताकत बनता है।”
+        </p>
+        <div class="pt-4 border-t border-white/5 flex items-center justify-between text-xs">
+          <div>
+            <div class="font-bold text-white">HARDCORE MANAGEMENT</div>
+            <div class="text-[10px] text-titanium">Patliputra Colony, Patna</div>
+          </div>
+          <span class="px-2.5 py-1 rounded-full apple-glass-pill text-[10px] text-zinc-300 font-mono">ESTD. PATNA</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="space-y-4 scroll-reveal">
+      <div class="flex items-center justify-between">
+        <div>
+          <div class="text-[10px] uppercase tracking-[0.25em] text-accent font-bold">Atmosphere</div>
+          <h3 class="font-grotesk text-2xl font-bold text-white">INSIDE THE SANCTUARY</h3>
+        </div>
+        <span class="text-xs text-titanium">Photo Tour</span>
+      </div>
+
+      <!-- High-Quality Visual Showcase -->
+      <div class="relative rounded-3xl overflow-hidden apple-glass border border-white/10 group">
+        <img 
+          src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=80" 
+          alt="Hardcore Gym Free Weights" 
+          class="w-full h-64 object-cover brightness-90 contrast-110 transition-transform duration-700 group-hover:scale-105"
+        >
+        <div class="absolute inset-0 bg-gradient-to-t from-deep via-deep/40 to-transparent"></div>
+        <div class="absolute bottom-4 left-5 right-5 flex items-center justify-between">
+          <div>
+            <span class="text-[10px] uppercase font-bold text-accent tracking-widest block">Main Floor</span>
+            <span class="font-bold text-sm text-white">Patliputra Strength Bay</span>
+          </div>
+          <a href="https://maps.app.goo.gl/JGv3qWhDcefRj4jx6" target="_blank" onclick="sound.playTap()" class="px-3 py-1.5 rounded-full apple-glass text-[10px] font-bold text-white hover:bg-white/15">
+            EXPLORE 360° MAPS
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="space-y-4 scroll-reveal">
+      <div>
+        <div class="text-[10px] uppercase tracking-[0.25em] text-accent font-bold">Transparent Membership</div>
+        <h3 class="font-grotesk text-2xl font-bold text-white">SELECT YOUR PASS</h3>
+      </div>
+
+      <div class="space-y-3">
+        
+        <!-- Tier 1 -->
+        <div class="p-5 rounded-3xl apple-glass border border-white/10 flex items-center justify-between">
+          <div class="space-y-1">
+            <span class="text-[9px] uppercase font-bold text-titanium tracking-widest block">1-Month Pass</span>
+            <div class="font-grotesk text-lg text-white font-bold">STARTER IRON</div>
+            <p class="text-[11px] text-zinc-400">Full floor access • Cardio & Free Weights</p>
+          </div>
+          <a href="https://wa.me/919576780805?text=Hello%20Hardcore%20Gym!%20I%20want%20to%20know%20the%201-Month%20fee." target="_blank" onclick="sound.playTap()" class="px-4 py-2.5 rounded-xl apple-glass-pill text-xs font-bold text-white hover:bg-white/10 active:scale-95 transition-all">
+            ENQUIRE
+          </a>
+        </div>
+
+        <!-- Tier 2 (Highlighted Transformation) -->
+        <div class="p-6 rounded-3xl apple-glass border-2 border-accent relative overflow-hidden space-y-3">
+          <div class="absolute top-0 right-0 bg-accent text-[9px] font-extrabold uppercase px-3 py-1 rounded-bl-xl tracking-widest text-white">
+            MOST POPULAR
+          </div>
+          <div>
+            <span class="text-[9px] uppercase font-bold text-accent tracking-widest block">3-Month Transformation</span>
+            <div class="font-grotesk text-2xl text-white font-extrabold">QUARTERLY PROTOCOL</div>
+            <p class="text-xs text-zinc-300 mt-1">Recommended for noticeable fat loss & muscle gain. Includes trainer guidance and routine chart.</p>
+          </div>
+          <div class="flex items-center gap-4 text-xs text-zinc-400 pt-1">
+            <span class="flex items-center gap-1.5"><i class="fa-solid fa-check text-accent"></i> Custom Routine</span>
+            <span class="flex items-center gap-1.5"><i class="fa-solid fa-check text-accent"></i> Diet Guidelines</span>
+          </div>
+          <a href="https://wa.me/919576780805?text=Hello%20Hardcore%20Gym!%20I%20am%20interested%20in%20the%20Quarterly%203-Month%20Transformation%20Pass." target="_blank" onclick="sound.playTap()" class="w-full py-3 rounded-xl bg-gradient-to-r from-accent to-accentOrange text-white text-xs font-bold uppercase tracking-wider text-center block active:scale-95 transition-all shadow-[0_4px_16px_rgba(255,55,20,0.3)]">
+            JOIN 3-MONTH PACK
+          </a>
+        </div>
+
+        <!-- Tier 3 -->
+        <div class="p-5 rounded-3xl apple-glass border border-white/10 flex items-center justify-between">
+          <div class="space-y-1">
+            <span class="text-[9px] uppercase font-bold text-titanium tracking-widest block">12-Month Dedication</span>
+            <div class="font-grotesk text-lg text-white font-bold">ANNUAL ATHLETE</div>
+            <p class="text-[11px] text-zinc-400">Lowest monthly rate • Permanent locker locker priority</p>
+          </div>
+          <a href="https://wa.me/919576780805?text=Hello%20Hardcore%20Gym!%20Please%20share%20the%20discounted%20Annual%201-Year%20fees." target="_blank" onclick="sound.playTap()" class="px-4 py-2.5 rounded-xl apple-glass-pill text-xs font-bold text-white hover:bg-white/10 active:scale-95 transition-all">
+            ENQUIRE
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="space-y-4 scroll-reveal">
+      <div class="flex items-center justify-between">
+        <div>
+          <div class="text-[10px] uppercase tracking-[0.25em] text-accent font-bold">Verified Members</div>
+          <h3 class="font-grotesk text-2xl font-bold text-white">4.2★ GOOGLE FEEDBACK</h3>
+        </div>
+        <a href="https://maps.app.goo.gl/JGv3qWhDcefRj4jx6" target="_blank" class="text-xs text-accent font-semibold hover:underline">
+          All 235 Reviews
+        </a>
+      </div>
+
+      <div class="space-y-3">
+        
+        <!-- Review 1 (From user's screenshot) -->
+        <div class="p-5 rounded-3xl apple-glass border border-white/10 space-y-2.5">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2.5">
+              <div class="w-8 h-8 rounded-full bg-red-600/30 text-red-400 font-bold flex items-center justify-center text-xs">
+                R
+              </div>
+              <div>
+                <span class="font-bold text-xs text-white block">Ritik Raushan</span>
+                <span class="text-[9px] text-titanium">Local Guide • Patna</span>
+              </div>
+            </div>
+            <div class="text-amber-400 text-xs flex gap-0.5">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+          </div>
+          <p class="text-xs text-zinc-300 leading-relaxed font-normal">
+            “Best gym in Patliputra area for heavy iron lifters. If you are serious about working out and don't care about unnecessary show-off, Hardcore is the place to be.”
+          </p>
+        </div>
+
+        <!-- Review 2 (From screenshot) -->
+        <div class="p-5 rounded-3xl apple-glass border border-white/10 space-y-2.5">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2.5">
+              <div class="w-8 h-8 rounded-full bg-emerald-600/30 text-emerald-400 font-bold flex items-center justify-center text-xs">
+                A
+              </div>
+              <div>
+                <span class="font-bold text-xs text-white block">Abhiraj Singh</span>
+                <span class="text-[9px] text-titanium">Verified Member</span>
+              </div>
+            </div>
+            <div class="text-amber-400 text-xs flex gap-0.5">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+          <p class="text-xs text-zinc-300 leading-relaxed font-normal">
+            “Value for money. Good equipment for progressive overload, organized functional training and personal attention from instructors.”
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="space-y-4 scroll-reveal">
+      <div>
+        <div class="text-[10px] uppercase tracking-[0.25em] text-accent font-bold">Live Coordinates</div>
+        <h3 class="font-grotesk text-2xl font-bold text-white">FIND HARDCORE GYM</h3>
+      </div>
+
+      <div class="rounded-3xl apple-glass border border-white/10 overflow-hidden">
+        
+        <!-- Live Dark Styled Map Embed -->
+        <div class="w-full h-48 relative bg-black">
+          <iframe 
+            title="Hardcore Gym Google Map Embed"
+            class="w-full h-full border-0 filter invert contrast-125 brightness-90"
+            src="https://maps.google.com/maps?q=22,%20Nehru%20Nagar%20Rd,%20near%20patliputra%20police%20station,%20Patliputra%20Colony,%20Patna,%20Bihar%20800013&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            loading="lazy">
+          </iframe>
+          <div class="absolute inset-0 pointer-events-none border-b border-white/10"></div>
+        </div>
+
+        <!-- Meta Details -->
+        <div class="p-5 space-y-4">
+          <div class="space-y-1">
+            <div class="font-grotesk font-bold text-sm text-white">HARDCORE GYM (हाईकॉर जिम)</div>
+            <p class="text-xs text-zinc-400 leading-relaxed">
+              22, Nehru Nagar Rd, near Patliputra Police Station, Patliputra Colony, Patna, Bihar 800013
+            </p>
+          </div>
+
+          <div class="pt-2 border-t border-white/5 space-y-2 text-xs">
+            <div class="flex items-center justify-between">
+              <span class="text-titanium">Closing Hours</span>
+              <span class="text-appleGreen font-medium">Closes at 8:30 PM Tonight</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-titanium">Direct Phone</span>
+              <a href="tel:09576780805" class="text-white font-bold hover:text-accent">095767 80805</a>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-titanium">Patna Locations</span>
+              <span class="text-zinc-300">2 Active Branches</span>
+            </div>
+          </div>
+
+          <!-- Direct Maps Launch Button -->
+          <a href="https://maps.app.goo.gl/JGv3qWhDcefRj4jx6" target="_blank" onclick="sound.playTap()" class="w-full py-3.5 rounded-2xl bg-white/10 hover:bg-white/15 border border-white/10 text-white font-bold text-xs uppercase tracking-wider text-center flex items-center justify-center gap-2 active:scale-95 transition-all">
+            <i class="fa-brands fa-google text-sm"></i>
+            <span>OPEN IN GOOGLE MAPS APP</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="trial" class="p-6 rounded-3xl apple-glass border border-white/10 space-y-4 scroll-reveal">
+      <div>
+        <div class="text-[10px] uppercase tracking-[0.25em] text-accent font-bold">Fast Pass</div>
+        <h3 class="font-grotesk text-2xl font-bold text-white">CLAIM 1-DAY PASS</h3>
+        <p class="text-xs text-zinc-400 mt-1">Visit Patliputra Colony and experience the equipment personally before deciding.</p>
+      </div>
+
+      <form onsubmit="event.preventDefault(); submitLead();" class="space-y-3 pt-2">
+        <div>
+          <input type="text" id="lead-name" required placeholder="Your Full Name" class="w-full bg-surfaceElevated border border-white/10 rounded-2xl px-4 py-3 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-accent transition-colors">
+        </div>
+        <div>
+          <input type="tel" id="lead-phone" required placeholder="WhatsApp Number" class="w-full bg-surfaceElevated border border-white/10 rounded-2xl px-4 py-3 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-accent transition-colors">
+        </div>
+
+        <button type="submit" onclick="sound.playTap()" class="w-full py-3.5 rounded-2xl bg-gradient-to-r from-accent to-accentOrange text-white text-xs font-bold uppercase tracking-wider active:scale-95 transition-transform shadow-[0_4px_20px_rgba(255,55,20,0.3)]">
+          CONFIRM ON WHATSAPP
+        </button>
+      </form>
+    </section>
+
+    <script>
+      function submitLead() {
+        const name = document.getElementById('lead-name').value;
+        const phone = document.getElementById('lead-phone').value;
+        sound.playMetallicRing();
+
+        const msg = encodeURIComponent(`Hi Hardcore Gym Patna! I would like to book my 1-Day Trial Pass at your Patliputra branch.\n\nName: ${name}\nPhone: ${phone}`);
+        window.open(`https://wa.me/919576780805?text=${msg}`, '_blank');
+      }
+    </script>
+
+    <footer class="text-center space-y-4 pt-10 border-t border-white/5 scroll-reveal">
+      <div class="flex items-center justify-center gap-2">
+        <div class="w-6 h-6 rounded-lg bg-surfaceElevated border border-white/10 flex items-center justify-center text-accent text-xs">
+          <i class="fa-solid fa-dumbbell"></i>
+        </div>
+        <span class="font-grotesk font-bold text-sm tracking-widest text-white">HARDCORE GYM</span>
+      </div>
+      
+      <p class="text-[11px] text-zinc-500 max-w-xs mx-auto leading-relaxed">
+        22, Nehru Nagar Rd, near Patliputra Police Station, Patliputra Colony, Patna, Bihar 800013
+      </p>
+
+      <div class="text-[10px] text-zinc-600 font-mono tracking-wider">
+        © 2026 HARDCORE GYM PATNA • NO COMPROMISE
+      </div>
+    </footer>
+
+  </main>
+
+  <div class="fixed bottom-4 left-4 right-4 max-w-md mx-auto z-40 apple-glass p-2 rounded-2xl shadow-[0_12px_45px_rgba(0,0,0,0.9)] flex items-center justify-between gap-2 border border-white/10">
+    
+    <!-- Phone Call -->
+    <a href="tel:09576780805" onclick="sound.playTap()" class="flex-1 py-3 rounded-xl bg-white/[0.06] hover:bg-white/10 text-white font-semibold text-xs tracking-wider uppercase text-center active:scale-95 transition-transform flex items-center justify-center gap-1.5">
+      <i class="fa-solid fa-phone text-accent text-xs"></i>
+      <span>CALL</span>
+    </a>
+
+    <!-- WhatsApp Chat -->
+    <a href="https://wa.me/919576780805?text=Hello%20Hardcore%20Gym%20Patna!%20I%20am%20interested%20in%20gym%20admission." target="_blank" onclick="sound.playTap()" class="flex-1 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs tracking-wider uppercase text-center active:scale-95 transition-transform flex items-center justify-center gap-1.5 shadow-md">
+      <i class="fa-brands fa-whatsapp text-sm"></i>
+      <span>CHAT</span>
+    </a>
+
+    <!-- Direct Maps Routing -->
+    <a href="https://maps.app.goo.gl/JGv3qWhDcefRj4jx6" target="_blank" onclick="sound.playTap()" class="flex-1 py-3 rounded-xl bg-gradient-to-r from-accent to-accentOrange text-white font-semibold text-xs tracking-wider uppercase text-center active:scale-95 transition-transform flex items-center justify-center gap-1.5 shadow-[0_4px_16px_rgba(255,55,20,0.3)]">
+      <i class="fa-solid fa-location-dot text-xs"></i>
+      <span>MAPS</span>
+    </a>
+
+  </div>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
